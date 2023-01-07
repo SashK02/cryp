@@ -237,6 +237,38 @@
       </div>
      
     </div> -->
+    <script>
+        function update(){
+          const form = document.getElementById('form');
+          const formData = new FormData(form);
+        
+          fetch('update.php', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(response => {
+              console.log(response);
+            // Update the page with the response
+            document.getElementById('name-for-change').innerHTML = response.status;
+            document.getElementById('name-for-change').innerHTML += response.text;
+            document.getElementById('name-for-change').innerHTML += response.name;
+          });
+}
+    </script>
+    
+    <form  id="form">
+  <div class="form-group">
+    <label for="id-input">ID:</label>
+    <input type="text" class="form-control" id="id-input" name="id">
+  </div>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+  <button type="button" class="btn btn-primary" onclick="update()">Submit</button>
+</form>
+<div id="name-for-change"></div>
     <footer class="bg-light py-3 mt-5">
       <!-- Add your footer content here -->
       <p>FTX from wish</p>
