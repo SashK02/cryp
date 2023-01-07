@@ -1,0 +1,28 @@
+body {
+  background-color: #ffffe0;
+}
+html {
+    scroll-behavior: smooth;
+    width: 80vw;
+    margin: 0 auto;
+  }
+  #contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #coins, #content {
+    width: 38vw;display:inline-block
+  }
+img{
+    width: 4vw;
+    height: 4vh;
+
+}
+#content {
+    margin-left:2vw;
+}
+#signup-error {
+  color:red
+}
